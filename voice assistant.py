@@ -98,7 +98,30 @@ if __name__ == "__main__":
         elif 'your name' in query:
             speak('I am YOURS. It means Your Own Ultimate Retainer Service.')
         
+        elif 'search google'in query:
+            r = sr.Recognizer()
+            with sr.Microphone() as source:
+                speak('What do you want to search?')
+                audio = r.listen(source)
+                try:
+                    text = r.recognize_google(audio)
+                        # print("You said : {}".format(text))
+                    driver = webdriver.Chrome('C:\\Users\\Ankan-HP\\AppData\\Local\\Programs\\Python\\Python38-32\\Scripts\\chromedriver.exe')
+                    driver.get("https://google.co.in/search?q="+text) 
+
+                except:
+                    print("Sorry could not recognize what you said")
         
+        elif 'search music'in query:
+            r = sr.Recognizer()
+            with sr.Microphone() as source:
+                speak('What do you want to listen?')
+                audio = r.listen(source)
+                try:
+                    text = r.recognize_google(audio)
+                        # print("You said : {}".format(text))
+                    driver = webdriver.Chrome('C:\\Users\\Ankan-HP\\AppData\\Local\\Programs\\Python\\Python38-32\\Scripts\\chromedriver.exe')
+                    driver.get("https://www.youtube.com/results?search_query="+text) 
 
                 except:
                     print("Sorry could not recognize what you said")
