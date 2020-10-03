@@ -5,6 +5,7 @@ import wikipedia #pip install wikipedia
 import webbrowser
 import os
 import smtplib
+import subprocess
 from selenium import webdriver
 
 engine = pyttsx3.init('sapi5')
@@ -125,6 +126,15 @@ if __name__ == "__main__":
 
                 except:
                     print("Sorry could not recognize what you said")
+                    
+        elif 'open calculator' in query:
+            subprocess.Popen('C:\\Windows\\System32\\calc.exe')
+        
+        elif 'open notepad' in query:
+            subprocess.Popen('C:\\Windows\\System32\\notepad.exe')
+        
+        elif 'open wordpad' in query:
+            subprocess.Popen('C:\\Windows\\System32\\write.exe')
         
         
 
